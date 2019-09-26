@@ -1,6 +1,6 @@
 {% set name = "ldas-tools-filters" %}
-{% set version = "2.6.3" %}
-{% set sha256 = "52047ef5cfc32ec4a964f8c4ddae1f8cecbf08ff23cd20d39134569265598576" %}
+{% set version = "2.6.4" %}
+{% set sha256 = "aa85ea017bb6d802e7d5fc6726c000057e98d17872b835bcd6fec7aa975c5717" %}
 {% set ldas_tools_cmake_version = "1.0.5" %}
 {% set ldas_tools_al_version = "2.6.2" %}
 
@@ -17,7 +17,7 @@ source:
     - no-docs.patch
 
 build:
-  number: 1000
+  number: 0
   skip: true  # [win]
 
 requirements:
