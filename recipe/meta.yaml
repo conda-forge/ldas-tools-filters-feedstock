@@ -17,6 +17,8 @@ source:
 build:
   number: 0
   skip: true  # [win]
+  run_exports:
+    - {{ pin_subpackage("ldas-tools-filters", max_pin="x.x") }}
 
 requirements:
   build:
