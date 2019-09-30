@@ -1,19 +1,20 @@
 #!/bin/bash
 
-mkdir -p build
-pushd build
+mkdir -p _build
+pushd _build
 
 # configure
 cmake ${SRC_DIR} \
 	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
-	-DCMAKE_BUILD_TYPE=Release \
-	-DCMAKE_INSTALL_LIBDIR="lib"
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+	-DCMAKE_INSTALL_LIBDIR="lib" \
+	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=true
 
 # build
-cmake --build .
+cmake --build . -- -j${CPU_COUNT}
 
 # test
-ctest -VV
+ctest -V
 
 # install
 cmake --build . --target install
