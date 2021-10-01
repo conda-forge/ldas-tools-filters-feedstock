@@ -1,6 +1,6 @@
 {% set name = "ldas-tools-filters" %}
-{% set version = "2.6.5" %}
-{% set sha256 = "ed9efbc00f90249536ac12b151bd43bb145e99dccde988e8ac8ec16657ce6bc3" %}
+{% set version = "2.6.6" %}
+{% set sha256 = "66ec578a06c2fde43cafdae0f50a2919f7f1d4c52ef3d8de1155b23435ab4314" %}
 
 # dependencies
 {% set ldas_tools_cmake_version = "1.2.2" %}
