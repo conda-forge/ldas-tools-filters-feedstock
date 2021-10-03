@@ -1,10 +1,9 @@
 {% set name = "ldas-tools-filters" %}
 {% set version = "2.6.6" %}
-{% set sha256 = "66ec578a06c2fde43cafdae0f50a2919f7f1d4c52ef3d8de1155b23435ab4314" %}
 
 # dependencies
-{% set ldas_tools_cmake_version = "1.2.2" %}
-{% set ldas_tools_al_version = "2.6.5" %}
+{% set ldas_tools_cmake_version = "1.2.3" %}
+{% set ldas_tools_al_version = "2.6.7" %}
 
 package:
   name: {{ name }}
@@ -12,7 +11,7 @@ package:
 
 source:
   url: http://software.ligo.org/lscsoft/source/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 66ec578a06c2fde43cafdae0f50a2919f7f1d4c52ef3d8de1155b23435ab4314
 
 build:
   number: 0
@@ -37,7 +36,7 @@ test:
     - pkg-config  # [unix]
   commands:
     - test -d ${PREFIX}/include/filters  # [unix]
-    - pkg-config --print-errors --modversion ldas-tools-filters  # [unix]
+    - pkg-config --print-errors --exact-version {{ version }} ldas-tools-filters  # [unix]
 
 about:
   home: https://wiki.ligo.org/Computing/LDASTools
