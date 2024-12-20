@@ -1,5 +1,5 @@
 {% set name = "ldas-tools-filters" %}
-{% set version = "2.6.6" %}
+{% set version = "2.6.7" %}
 
 # dependencies
 {% set ldas_tools_cmake_version = "1.2.3" %}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: http://software.ligo.org/lscsoft/source/{{ name }}-{{ version }}.tar.gz
-  sha256: 66ec578a06c2fde43cafdae0f50a2919f7f1d4c52ef3d8de1155b23435ab4314
+  sha256: 3fefa9575c1227db46014d2e08b74fb51616e7b88b72957198c159d3e3f4b9b7
 
 build:
   number: 0
@@ -22,6 +22,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - cmake >=3.6
     - pkg-config  # [not win]
     - make  # [not win]
