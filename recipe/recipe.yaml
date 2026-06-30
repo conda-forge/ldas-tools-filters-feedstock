@@ -16,6 +16,8 @@ source:
   sha256: 03d996673e067727ec33da0fdaf6230aa8b54711510042d52e027537ac501536
 
 build:
+  dynamic_linking:
+    overdepending_behavior: error
   number: 0
   skip: win
 
