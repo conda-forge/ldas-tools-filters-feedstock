@@ -5,11 +5,10 @@ pushd _build
 
 # configure
 cmake \
-	${SRC_DIR} \
-	${CMAKE_ARGS} \
-	-DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
-	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:BOOL=true \
-	-DCMAKE_OSX_ARCHITECTURES:STRING="${OSX_ARCH}" \
+  ${CMAKE_ARGS} \
+  -DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:BOOL=true \
+  -DCMAKE_OSX_ARCHITECTURES:STRING="${OSX_ARCH}" \
+  ${SRC_DIR} \
 ;
 
 # build
@@ -17,7 +16,7 @@ cmake --build . --parallel ${CPU_COUNT} --verbose
 
 # test
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
-	ctest --parallel ${CPU_COUNT} --verbose
+  ctest --parallel ${CPU_COUNT} --verbose
 fi
 
 # install
